@@ -20,6 +20,16 @@
     }
 }
 
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
 html, body {
     box-sizing: border-box;
     padding: 0;
@@ -71,7 +81,7 @@ main {
     /* backdrop-filter: blur(16px); */
     display: grid;
     /* grid-template-columns: repeat(4, 25%); */
-    width: 80vw;
+    /* width: 80vw; */
     margin: 0 auto;
 }
 
@@ -178,12 +188,24 @@ main {
     animation-timing-function: linear;
 }
 
-.bedrijven div>p {
-    width: 100%;
+div.marquee {
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
+    border: 1px solid #444;
+
+}
+
+.bedrijven div.marquee>p {
     font-size: 39.06px;
     font-family: HelveticaNowDisplay;
     font-weight: 300;
     color: white;
+
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 32s linear infinite;
 }
 
 .bedrijven div>p>img {
