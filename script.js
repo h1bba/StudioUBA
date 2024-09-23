@@ -23,7 +23,22 @@ function smoothScroll(targetPosition, duration) {
     requestAnimationFrame(animation);
 }
 
-// Example usage on button click
-document.getElementById('scrollButton').addEventListener('click', function () {
-    smoothScroll(1000, 1000); // Scrolls 1000px down over 1 second
-});
+// // Example usage on button click
+// document.getElementById('scrollButton').addEventListener('click', function () {
+//     smoothScroll(1000, 1000); // Scrolls 1000px down over 1 second
+// });
+
+function updateAmsterdamTime() {
+    const options = {
+        timeZone: 'Europe/Amsterdam',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true // Use 24-hour format
+    };
+
+    const amsterdamTime = new Intl.DateTimeFormat('en-GB', options).format(new Date());
+    document.getElementById('amsterdam-time').textContent = "CEST: " + amsterdamTime;
+}
+
+// Update the time every second
+setInterval(updateAmsterdamTime, 1000);
