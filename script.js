@@ -42,3 +42,23 @@ function updateAmsterdamTime() {
 
 // Update the time every second
 setInterval(updateAmsterdamTime, 1000);
+
+const scrollLeftBtn = document.getElementById('scrollLeft');
+const scrollRightBtn = document.getElementById('scrollRight');
+const sidescrollContainer = document.querySelector('.sidescroll');
+
+// Scroll 100vw to the left
+scrollLeftBtn.addEventListener('click', () => {
+    sidescrollContainer.scrollBy({
+        left: -window.innerWidth,  // Scroll left by 100vw
+        behavior: 'smooth'
+    });
+});
+
+// Scroll 100vw to the right
+scrollRightBtn.addEventListener('click', () => {
+    sidescrollContainer.scrollBy({
+        left: window.innerWidth,   // Scroll right by 100vw
+        behavior: 'smooth'
+    });
+});
