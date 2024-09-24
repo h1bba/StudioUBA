@@ -56,6 +56,7 @@
 
 html {
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 html, body {
@@ -93,6 +94,83 @@ body {
     height: 100%;
     text-align: center;
 }
+
+.menuwrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+
+
+    --s: 32px;
+    /* control the size */
+    --c: white;
+    /* the color */
+
+    height: var(--s);
+    aspect-ratio: 1;
+    border: none;
+    padding: 0;
+    border-inline: calc(var(--s)/2) solid #0000;
+    box-sizing: content-box;
+    --_g1: linear-gradient(var(--c) 20%, #0000 0 80%, var(--c) 0) no-repeat content-box border-box;
+    --_g2: radial-gradient(circle closest-side at 50% 12.5%, var(--c) 95%, #0000) repeat-y content-box border-box;
+    background:
+        var(--_g2) left var(--_p, 0px) top,
+        var(--_g1) left calc(var(--s)/10 + var(--_p, 0px)) top,
+        var(--_g2) right var(--_p, 0px) top,
+        var(--_g1) right calc(var(--s)/10 + var(--_p, 0px)) top;
+    background-size:
+        20% 80%,
+        40% 100%;
+    position: relative;
+    clip-path: inset(0 25%);
+    -webkit-mask: linear-gradient(90deg, #0000, #000 25% 75%, #0000);
+    cursor: pointer;
+    transition:
+        background-position .3s var(--_s, .3s),
+        clip-path 0s var(--_s, .6s);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    vertical-align: middle;
+}
+
+.menu:before,
+.menu:after {
+    content: "";
+    position: absolute;
+    border-radius: var(--s);
+    inset: 40% 0;
+    background: var(--c);
+    transition: transform .3s calc(.3s - var(--_s, .3s));
+}
+
+.menu:checked {
+    clip-path: inset(0);
+    --_p: calc(-1*var(--s));
+    --_s: 0s;
+}
+
+.menu:checked:before {
+    transform: rotate(45deg);
+}
+
+.menu:checked:after {
+    transform: rotate(-45deg);
+}
+
+.menu:focus-visible {
+    clip-path: none;
+    -webkit-mask: none;
+    border: none;
+    outline: 2px solid var(--c);
+    outline-offset: 5px;
+}
+
 
 
 .category {
@@ -296,7 +374,7 @@ div.marquee {
     margin-top: 0;
 }
 
-.projectwrapper, .servicewrapper {
+.projectwrapper {
     position: relative;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.50);
@@ -385,8 +463,8 @@ li {
 }
 
 .titleproject h2 {
+    text-align: center;
     color: white;
-    padding-left: 1em;
     font-size: 39.06px;
     font-family: HelveticaNowDisplay;
     font-weight: 400;
@@ -460,37 +538,84 @@ li {
     border: 1px solid rgba(255, 255, 255, 0.50);
     backdrop-filter: blur(16px);
     background-color: rgba(0, 0, 0, 0.75);
-    grid-template-columns: repeat(4, 25%);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     max-width: 1600px;
     width: 75vw;
-    margin: 6em auto;
+    height: max-content;
+    margin: auto;
+
+    flex: none;
+    scroll-snap-align: center;
+    /* Ensure smooth snapping between sections */
+
 }
 
 .service {
+    position: relative;
+    box-sizing: border-box;
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
     grid-column: 1/5;
+    row-gap: 4em;
+    column-gap: 4em;
+    padding: 2em;
+    width: 100%;
+    margin: auto;
 }
 
 .servicewrapper {
+    flex-grow: 1;
+
     position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.50);
     background: linear-gradient(188deg, rgb(49, 49, 49) 6.09%, rgb(73, 73, 73) 39.9%, rgb(56, 56, 56) 93.91%);
-    margin: 2em;
+    /* margin: 2em; */
     padding: 2em;
+    height: 350px;
+    width: 100%;
+    transform-origin: center;
+}
+
+span.linever {
+    display: flex;
+    justify-self: center;
+    box-sizing: border-box;
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.50);
+}
+
+span.linehor {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.50);
 }
 
 .servicewrapper h3 {
-    margin-bottom: 2em;
+    width: 80%;
 }
 
 .servicewrapper p {
+    position: absolute;
     font-family: Lato, sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 130%;
+    align-items: end;
     vertical-align: bottom;
-    max-width: 500px;
-    margin-bottom: 0;
+    max-width: 400px;
+    width: 80%;
+    bottom: 1em;
 }
 
 .servicewrapper:nth-child(1), .servicewrapper:nth-child(3) {
@@ -501,6 +626,38 @@ li {
     grid-column: 3/5;
 }
 
+.sidescroll {
+    margin: 6em auto;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    /* For Firefox */
+    /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory;
+    /* Snap scrolling behavior */
+    width: 100vw;
+    /* Full viewport width */
+    height: 100%;
+    /* Full viewport height */
+    scroll-behavior: smooth;
+    /* Smooth scrolling */
+}
+
+.sidescroll::-webkit-scrollbar {
+    display: none;
+    /* For Chrome, Safari, and Edge */
+}
+
+.sidescrollsection {
+    display: flex;
+    /* Flexbox layout for horizontal alignment */
+    flex-direction: row;
+    /* Make sections align horizontally */
+    width: 200vw;
+    /* Each section will take up full screen width */
+    height: 100vh;
+    /* Full height for the sections */
+}
+
 section.studiouba {
     width: 75vw;
     max-width: 1600px;
@@ -509,7 +666,8 @@ section.studiouba {
     font-family: HelveticaNowDisplay, sans-serif;
     font-weight: 800;
     box-sizing: border-box;
-    padding-top: 4em;
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 section.studiouba div.uba>span {
