@@ -46,6 +46,15 @@ setInterval(updateAmsterdamTime, 1000);
 const scrollLeftBtn = document.getElementById('scrollLeft');
 const scrollRightBtn = document.getElementById('scrollRight');
 const sidescrollContainer = document.querySelector('.sidescroll');
+const scrollArrow = document.getElementById('scrollArrow');
+
+scrollArrow.addEventListener('click', () => {
+    sidescrollContainer.scrollBy({
+        left: window.innerWidth,  // Scroll left by 100vw
+        behavior: 'smooth'
+    });
+});
+
 
 // Scroll 100vw to the left
 scrollLeftBtn.addEventListener('click', () => {

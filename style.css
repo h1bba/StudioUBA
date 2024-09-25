@@ -99,6 +99,7 @@ body {
 }
 
 .opento {
+    font-family: Lato, sans-serif;
     display: inline-block;
     position: relative;
     color: black;
@@ -114,7 +115,8 @@ body {
     width: 12px;
     border-radius: 16px;
     left: 1em;
-    top: 0.6em;
+    top: 25%;
+
 }
 
 .menuwrapper {
@@ -634,6 +636,8 @@ li {
     transform-origin: center;
 }
 
+
+
 span.linever {
     display: flex;
     justify-self: center;
@@ -656,7 +660,7 @@ span.linehor {
 }
 
 .servicewrapper h3 {
-    width: 80%;
+    width: 75%;
 }
 
 .servicewrapper p {
@@ -680,6 +684,7 @@ span.linehor {
 }
 
 .sidescroll {
+    position: relative;
     box-sizing: border-box;
     margin: 6em auto;
     margin-left: -8px;
@@ -712,6 +717,22 @@ span.linehor {
     height: 100%;
     /* Full height for the sections */
     margin: auto;
+}
+
+.sidearrow {
+    position: absolute;
+    top: 50%;
+    right: 1%;
+    width: 128px;
+    rotate: 90deg;
+    opacity: 40%;
+    transition: 1s ease;
+}
+
+.sidearrow:hover {
+    opacity: 80%;
+    transition: .5s ease;
+    cursor: pointer;
 }
 
 section.studiouba {
@@ -786,4 +807,67 @@ div.mockups img {
     max-width: 50%;
     padding: 2em;
     border-radius: 48px;
+}
+
+.forminfo>div {
+    display: flex;
+    flex-direction: column;
+}
+
+section.form {
+    box-sizing: border-box;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.50);
+    color: white;
+    width: 75vw;
+    margin: 2em auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+}
+
+section.form h3 {
+    font-family: HelveticaNowDisplay, sans-serif;
+    font-size: 39.06px;
+    text-align: left;
+
+    grid-column: 1/4;
+    margin: 0;
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.50); */
+
+}
+
+.selectservice-form {
+    display: grid;
+}
+
+.selectservice-form label {
+    font-family: HelveticaNowDisplay, sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.selectservice-form input {
+    height: 32px;
+    width: 32px;
+}
+
+form.service-form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 2em;
+    grid-column: 1/5;
+    grid-row: 2;
+}
+
+div.form-group {
+    display: flex;
+    flex-direction: row;
+}
+
+section.form .categorywrapper {
+    grid-column: 1/2;
+    grid-row: 1;
 }

@@ -131,6 +131,7 @@
     </div>
 
     <div class="sidescroll">
+        <img id="scrollArrow" class="sidearrow" src="/img/sidearrow.svg" alt="View our process">
         <div class="sidescrollsection">
             <section class="services">
 
@@ -196,6 +197,8 @@
                     <a id="scrollRight">OUR PROCESS <img src="/img/arrowthin.svg"></a>
                 </div>
             </section>
+
+
 
             <section class="services">
 
@@ -279,10 +282,18 @@
         <div class="logotitle">
             <p>CREATIVE STUDIO <span class="logotext">UBA</span></p>
         </div>
+    </section>
 
-        <section class="form">
-            <form class="service-form" action="/submit" method="POST">
-                <h2>WHAT ARE YOU IN FOR?</h2>
+    <section class="form">
+        <div class="categorywrapper">
+            <h2>CONTACT</h2>
+        </div>
+        <div class="titleproject">
+            <h2>Van idee tot realiteit</h2>
+        </div>
+        <form class="service-form" action="/submit" method="POST">
+            <div class="selectservice-form">
+                <h3>WHAT ARE YOU IN FOR?</h3>
                 <div class="form-group">
                     <input type="checkbox" id="digitaldesign" name="services[]" value="Digital Design">
                     <label for="digitaldesign">Digital Design</label>
@@ -307,12 +318,36 @@
                     <input type="checkbox" id="other" name="services[]" value="Other">
                     <label for="other">Other</label>
                 </div>
+            </div>
 
-                <button type="submit" class="submit-btn">Submit</button>
+            <div class="forminfo">
+                <div>
+                    <label for="name">WHAT'S YOUR NAME?</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
 
-                <div class="forminfo"></div>
-            </form>
-        </section>
+                <div>
+                    <label for="company">WHICH COMPANY ARE WE TALKING ABOUT?</label>
+                    <input type="text" id="company" name="company" placeholder="Enter your company name">
+                </div>
+
+                <div>
+                    <label for="email">WHERE CAN WE CONTACT YOU?</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div>
+                    <label for="budget">WHAT IS YOUR ESTIMATED BUDGET?</label>
+                    <input type="text" id="budget" name="budget" placeholder="€1K - €20K">
+                </div>
+
+                <label for="description">TELL US ABOUT YOUR EXPECTATIONS</label>
+                <textarea id="description" name="description" placeholder="Tell us more about your project"></textarea>
+
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+
+        </form>
     </section>
 
     <header>
