@@ -853,7 +853,7 @@ section.form h3 {
     font-size: 20px;
 }
 
-.selectservice-form input {
+.form-group input {
     height: 32px;
     width: 32px;
 }
@@ -865,6 +865,8 @@ form.service-form {
     grid-column: 1/4;
     grid-row: 2;
     box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.50);
+
 }
 
 div.form-group {
@@ -873,6 +875,7 @@ div.form-group {
     gap: .5em;
     align-items: center;
     flex-basis: 50%;
+    padding-bottom: 1em;
 }
 
 section.form .categorywrapper {
@@ -881,15 +884,92 @@ section.form .categorywrapper {
 }
 
 .forminfo {
-    background: linear-gradient(188deg, rgb(49, 49, 49) 6.09%, rgb(73, 73, 73) 39.9%, rgb(56, 56, 56) 93.91%);
-    border: 1px solid rgba(255, 255, 255, 0.50);
     border-radius: 16px;
-    padding: 2em;
     grid-column: 1/5;
 
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     width: 100%;
+    box-sizing: border-box;
+    justify-content: left;
+    column-gap: 2em;
 }
+
+.forminfo input {
+    margin-top: .5em;
+    height: 48px;
+    font-size: 20px;
+    padding-left: .5em;
+    border: 1px solid rgba(255, 255, 255, 0.50);
+
+}
+
+.forminfo textarea {
+    margin-top: .5em;
+    height: 96px;
+    font-size: 20px;
+    font-family: HelveticaNowDisplay, sans-serif;
+    border-radius: 8px;
+    padding-left: .5em;
+    padding-top: .5em;
+}
+
+.forminfo>div {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2em;
+    flex-basis: 45%;
+    /* max-width: 400px; */
+}
+
+.forminfo>div>label {
+    font-weight: 500;
+}
+
+.selectservice-form .linehor {
+    margin: 1em 0em 2em 0em;
+    position: relative;
+
+}
+
+input[type="text"], input[type="email"] {
+    border-radius: 8px;
+}
+
+input[type="checkbox"] {
+    accent-color: #00ff00;
+}
+
+form button {
+    font-family: HelveticaNowDisplay, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    padding: 1em 0 1em 0;
+    height: 4em;
+    width: 16em;
+    margin: auto;
+    border-radius: 128px;
+    background: linear-gradient(188deg, rgb(49, 49, 49) 6.09%, rgb(73, 73, 73) 39.9%, rgb(56, 56, 56) 93.91%);
+    transition: 1s;
+    border: 1px solid rgba(255, 255, 255, 0.50);
+
+}
+
+form button:hover {
+    transition: .5s;
+    background: linear-gradient(to top, #cbd3cb 0%, #c9c9c9 100%);
+    color: #000;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+}
+
+
+
+section.form .procesbtn {
+    grid-row: 1;
+}
+
 
 /* .forminfo>div {
     display: inline-flex;
@@ -897,12 +977,10 @@ section.form .categorywrapper {
     flex-basis: 50%;
 
 } */
-
+/* 
 .forminfo>div:nth-child(odd) {
     width: 50%;
-    
-}
-
-.forminfo>div:nth-child(even) {
 
 }
+
+.forminfo>div:nth-child(even) {} */

@@ -293,7 +293,7 @@
         </div>
         <form class="service-form" action="/submit" method="POST">
             <div class="selectservice-form">
-                <h3>WHAT ARE YOU IN FOR?</h3>
+                <h3>WHAT ARE YOU LOOKING FOR?</h3>
                 <div class="form-group">
                     <input type="checkbox" id="digitaldesign" name="services[]" value="Digital Design">
                     <label for="digitaldesign">Digital Design</label>
@@ -318,36 +318,53 @@
                     <input type="checkbox" id="other" name="services[]" value="Other">
                     <label for="other">Other</label>
                 </div>
-            </div>
+                <span class="linehor"></span>
+                <div class="forminfo">
+                    <div>
+                        <label for="name">WHAT'S YOUR NAME?</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
 
-            <div class="forminfo">
-                <div>
-                    <label for="name">WHAT'S YOUR NAME?</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    <div>
+                        <label for="company">WHAT'S YOUR COMPANY'S CALLED?</label>
+                        <input type="text" id="company" name="company" placeholder="Enter your company name">
+                    </div>
+
+                    <div>
+                        <label for="email">WHERE CAN WE CONTACT YOU?</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div>
+                        <label for="budget">WHAT IS YOUR ESTIMATED BUDGET?</label>
+                        <input type="text" id="budget" name="budget" placeholder="€1K - €50K">
+                    </div>
+
+                    <div>
+                        <label for="description">TELL US ABOUT YOUR EXPECTATIONS</label>
+                        <textarea id="description" name="description"
+                            placeholder="Tell us more about your project"></textarea>
+                    </div>
+
                 </div>
-
-                <div>
-                    <label for="company">WHICH COMPANY ARE WE TALKING ABOUT?</label>
-                    <input type="text" id="company" name="company" placeholder="Enter your company name">
-                </div>
-
-                <div>
-                    <label for="email">WHERE CAN WE CONTACT YOU?</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-
-                <div>
-                    <label for="budget">WHAT IS YOUR ESTIMATED BUDGET?</label>
-                    <input type="text" id="budget" name="budget" placeholder="€1K - €20K">
-                </div>
-
-                <label for="description">TELL US ABOUT YOUR EXPECTATIONS</label>
-                <textarea id="description" name="description" placeholder="Tell us more about your project"></textarea>
                 <button type="submit" class="submit-btn">Submit</button>
 
             </div>
 
         </form>
+
+        <div class="procesbtn">
+            <a>Socials <img src="/img/arrowthin.svg"></a>
+        </div>
+        <div>
+            <a>LinkedIn <img src="/img/arrowthin.svg"></a>
+        </div>
+        <div>
+            <a>Instagram <img src="/img/arrowthin.svg"></a>
+        </div>
+        <div>
+            <a>Discord <img src="/img/arrowthin.svg"></a>
+        </div>
     </section>
 
     <header>
