@@ -398,7 +398,9 @@ div.marquee {
     margin-top: 0;
 }
 
-.projectwrapper {
+a.projectwrapper {
+    box-sizing: border-box;
+    display: block;
     position: relative;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.50);
@@ -631,7 +633,7 @@ li {
     background: linear-gradient(188deg, rgb(49, 49, 49) 6.09%, rgb(73, 73, 73) 39.9%, rgb(56, 56, 56) 93.91%);
     /* margin: 2em; */
     padding: 2em;
-    height: 350px;
+    height: 250px;
     width: 100%;
     transform-origin: center;
 }
@@ -824,9 +826,9 @@ section.form {
 }
 
 section.form h3 {
-    padding-bottom: .5em;
+    padding-bottom: 1em;
     font-family: HelveticaNowDisplay, sans-serif;
-    font-size: 25px;
+    font-size: 31.06px;
     text-align: left;
 
     margin: 0;
