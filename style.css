@@ -749,7 +749,7 @@ span.linehor {
 section.studiouba {
     width: 75vw;
     max-width: 1600px;
-    margin: auto;
+    margin: 8em auto;
     color: white;
     font-family: HelveticaNowDisplay, sans-serif;
     font-weight: 800;
@@ -827,10 +827,11 @@ section.form {
     border: 1px solid rgba(255, 255, 255, 0.50);
     color: white;
     width: 75vw;
-    margin: 2em auto;
+    margin: 8em auto;
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+
 }
 
 section.form h3 {
@@ -991,7 +992,7 @@ section.form .procesbtn {
     border: 1px solid rgba(255, 255, 255, 0.50);
     color: white;
     width: 75vw;
-    margin: 2em auto;
+    margin: 8em auto;
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1020,6 +1021,7 @@ span.wereld {
 
 .cta-bottom h3 {
     gap: .4em;
+    font-weight: 300;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -1047,6 +1049,22 @@ div.sociallinks {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.sociallinks a:hover {
+    background: linear-gradient(to top, #cbd3cb 0%, #c9c9c9 100%);
+
+}
+
+.sociallinks a:hover img {
+    filter: invert(1);
+}
+
+.sociallinks a:hover~.cta-bottom .wereld {
+    display: inline-block;
+    transform: rotate(180deg);
+    transition: transform 1s ease;
+    scale: 2;
 }
 
 .sociallinks a img {

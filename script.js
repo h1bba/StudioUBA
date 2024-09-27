@@ -71,3 +71,26 @@ scrollRightBtn.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+// Select all the social link anchor tags and the span with the class 'wereld'
+const socialLinks = document.querySelectorAll('.sociallinks a');
+const wereldSpan = document.querySelector('.wereld');
+
+// Function to rotate the span
+function rotateSpan() {
+    wereldSpan.style.transition = 'transform 1s ease';
+    wereldSpan.style.transform = 'rotate(180deg)';
+}
+
+// Function to reset the span's rotation
+function resetSpan() {
+    wereldSpan.style.transition = 'transform 1s ease';
+    wereldSpan.style.transform = 'rotate(0deg)';
+}
+
+// Add event listeners to all social links
+socialLinks.forEach(link => {
+    link.addEventListener('mouseover', rotateSpan);
+    link.addEventListener('mouseout', resetSpan);
+});
+
