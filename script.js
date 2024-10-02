@@ -94,3 +94,19 @@ socialLinks.forEach(link => {
     link.addEventListener('mouseout', resetSpan);
 });
 
+document.querySelectorAll('.banner span').forEach((span, index, spans) => {
+    span.addEventListener('mouseover', () => {
+        // Remove the 'hovered' class from all spans
+        spans.forEach(s => s.classList.remove('hovered'));
+
+        // Add 'hovered' class to the current, previous, and next spans
+        if (spans[index - 1]) spans[index - 1].classList.add('hovered');
+        span.classList.add('hovered');
+        if (spans[index + 1]) spans[index + 1].classList.add('hovered');
+    });
+
+    span.addEventListener('mouseout', () => {
+        // Remove the 'hovered' class when the mouse leaves
+        spans.forEach(s => s.classList.remove('hovered'));
+    });
+});
