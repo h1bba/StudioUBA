@@ -422,7 +422,7 @@ div.herowrapper h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #111111;
     font-size: 16px;
     font-family: Lato;
 }
@@ -550,7 +550,7 @@ div.marquee {
 
 }
 
-.project1 span, .servicewrapper span {
+.project1 span, .project2 span, .servicewrapper span {
     color: #111111;
 
     font-family: Lato, sans-serif;
@@ -558,7 +558,7 @@ div.marquee {
     font-size: 16px;
 }
 
-.project1 h3, .servicewrapper h3 {
+.project1 h3, .project2 h3, .servicewrapper h3 {
     font-size: 39.06px;
     font-family: HelveticaNowDisplay, sans-serif;
     font-weight: 500;
@@ -606,6 +606,10 @@ div.bottominfo {
 }
 
 .projectwrapper2-3 {
+    display: flex;
+    height: 40em;
+    padding: 2em;
+    color: #111111;
     background-color: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.50);
     grid-column: 3/5;
@@ -613,6 +617,16 @@ div.bottominfo {
 
 .project2 {
     display: contents;
+}
+
+.dividerwrap {
+    grid-column: 1/5;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    height: 1px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+
 }
 
 .gificon {
@@ -703,6 +717,7 @@ li {
     display: inline-block;
     padding: 0.5em 1em 0.5em 1em;
     border-radius: 16px;
+    color: white;
     background-color: #111111;
 }
 
