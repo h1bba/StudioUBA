@@ -122,7 +122,7 @@ a {
     position: relative;
     color: #ffffff;
     background-color: #111111;
-    padding: 1em 1em 1em 1em;
+    padding: .4em 1em .4em 1em;
     border-radius: 16px;
 }
 
@@ -143,6 +143,7 @@ a {
 }
 
 .menu {
+    filter: invert(1);
 
 
     --s: 32px;
@@ -315,13 +316,15 @@ div.herowrapper h2 {
     color: white;
 }
 
-/* When hovering over the banner, make all letters font-weight 400 */
-.banner:hover span {
-    font-weight: 300 !important;
-}
 
-.banner span.hovered {
-    font-weight: 900 !important;
+
+/* Default font styles for all letters */
+.banner span {
+    margin: -.1em;
+    display: inline-block;
+    transition: font-weight 0.3s ease;
+    font-weight: 300;
+    /* Default font weight for all letters */
 }
 
 /* Bold the letters UBA by default */
@@ -334,11 +337,19 @@ div.herowrapper h2 {
     font-weight: 800;
 }
 
-.banner span {
-    margin: -.1em;
-    display: inline-block;
-    transition: font-weight 0.3s ease;
+/* When hovering over the entire banner, all letters become font-weight 400 */
+.banner:hover span {
+    font-weight: 300;
+    cursor: default;
 }
+
+/* When hovering over a specific letter, make that letter, the previous, and the next bold */
+.banner span:hover,
+.banner span:hover~span,
+.banner span~span:hover {
+    font-weight: 800;
+}
+
 
 
 .gridhero div:nth-child(1) {
@@ -631,8 +642,6 @@ div.bottominfo {
 
 .gificon {
     background-color: white;
-    filter: invert(1);
-    mix-blend-mode: screen;
     width: 48px;
     position: absolute;
     right: 2em;
@@ -651,11 +660,7 @@ div.bottominfo {
 
 .servicewrapper:hover .gificon {
     width: 64px;
-
     transition: .3s ease;
-    filter: invert(0);
-    mix-blend-mode: multiply;
-
 }
 
 div.procesbtn {
@@ -828,7 +833,7 @@ li {
     grid-column: 1/5;
     row-gap: 2em;
     column-gap: 2em;
-    padding: 2em;
+    padding: 1em;
     width: 100%;
     margin: auto;
 }
@@ -842,7 +847,7 @@ li {
     flex-direction: column;
     border-radius: 16px;
     border: 1px solid rgba(0, 0, 0, 0.50);
-    background: #ffffff;
+    background: #f8f8f8;
     padding: 2em;
     /* min-height: 250px; */
     height: 320px;
@@ -860,7 +865,7 @@ span.linever {
     position: absolute;
     width: 1px;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.50);
+    background-color: rgba(0, 0, 0, 0.50);
 }
 
 span.linehor {
@@ -871,7 +876,7 @@ span.linehor {
     position: absolute;
     width: 100%;
     height: 1px;
-    background-color: rgba(255, 255, 255, 0.50);
+    background-color: rgba(0, 0, 0, 0.50);
 }
 
 .servicewrapper h3 {
@@ -998,10 +1003,10 @@ div.logotitle {
 }
 
 div.mockups {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.50);
-    border-top: 1px solid rgba(255, 255, 255, 0.50);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.50);
+    border-top: 1px solid rgba(0, 0, 0, 0.50);
 
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: #ffffff;
     width: 100vw;
     max-height: 400px;
     box-sizing: border-box;
@@ -1015,6 +1020,7 @@ div.mockup-track {
     display: flex;
     animation: marquee 64s linear infinite;
     width: calc(400px * 18);
+
 }
 
 div.mockups img {
@@ -1027,9 +1033,7 @@ div.mockups img {
 section.form {
     box-sizing: border-box;
     position: relative;
-    background-color: rgba(0, 0, 0, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.50);
-    color: white;
+    color: #111111;
     width: 75vw;
     margin: 8em auto;
 
@@ -1051,8 +1055,8 @@ section.form h3 {
 }
 
 .selectservice-form {
-    background: linear-gradient(188deg, rgb(49, 49, 49) 6.09%, rgb(73, 73, 73) 39.9%, rgb(56, 56, 56) 93.91%);
-    border: 1px solid rgba(255, 255, 255, 0.50);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.50);
     border-radius: 16px;
     padding: 2em;
     grid-column: 1/5;
@@ -1064,13 +1068,14 @@ section.form h3 {
 
 .selectservice-form label {
     font-family: HelveticaNowDisplay, sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 20px;
 }
 
 .form-group input {
     height: 32px;
     width: 32px;
+    background-color: #111111;
 }
 
 form.service-form {
@@ -1080,7 +1085,8 @@ form.service-form {
     grid-column: 1/5;
     grid-row: 2;
     box-sizing: border-box;
-    border: 1px solid rgba(255, 255, 255, 0.50);
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.50);
 
 }
 
@@ -1114,8 +1120,9 @@ section.form .categorywrapper {
     margin-top: .5em;
     height: 48px;
     font-size: 20px;
-    padding-left: .5em;
-    border: 1px solid rgba(255, 255, 255, 0.50);
+    padding-left: .8em;
+    border: 1px solid rgba(0, 0, 0, 0.50);
+    background-color: #F8F8F8;
 
 }
 
@@ -1127,6 +1134,8 @@ section.form .categorywrapper {
     border-radius: 8px;
     padding-left: .5em;
     padding-top: .5em;
+    background-color: #F8F8F8;
+
 }
 
 .forminfo>div {
@@ -1152,7 +1161,7 @@ input[type="text"], input[type="email"] {
 }
 
 input[type="checkbox"] {
-    accent-color: #00ff00;
+    accent-color: #f8f8f8;
 }
 
 .form .titleproject {
@@ -1163,24 +1172,44 @@ form button {
     font-family: HelveticaNowDisplay, sans-serif;
     font-size: 25px;
     font-weight: 500;
-    color: white;
-    padding: 1em 0 1em 0;
+    color: #111111;
+    padding: .4em 0 .4em 0;
     height: 4em;
     width: 16em;
     margin: auto;
     border-radius: 128px;
-    background: linear-gradient(188deg, rgb(49, 49, 49) 6.09%, rgb(73, 73, 73) 39.9%, rgb(56, 56, 56) 93.91%);
-    transition: 1s;
-    border: 1px solid rgba(255, 255, 255, 0.50);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.50);
+
+    transition: .5s ease;
 
 }
 
 form button:hover {
-    transition: .5s;
-    background: linear-gradient(to top, #cbd3cb 0%, #c9c9c9 100%);
-    color: #000;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: #111111;
+    transition: .5s ease;
 
+}
+
+form button>img {
+    height: 32px;
+    width: 32px;
+    vertical-align: middle;
+    filter: invert(1);
+
+    transition: .5s ease;
+    margin-bottom: 8px;
+    margin-right: 4px;
+    transform-origin: center;
+}
+
+form button:hover img {
+    rotate: 90deg;
+    transition: .5s ease;
+    filter: invert(0);
+    mix-blend-mode: screen;
 }
 
 
