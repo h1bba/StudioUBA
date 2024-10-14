@@ -288,7 +288,7 @@ div.herowrapper {
     background-color: #ffffff;
     border: rgba(0, 0, 0, 0.5);
     width: 25%;
-    margin: 4em 0em 0em 0em;
+    margin: 6em 0em 0em 0em;
     border: 1px solid rgba(0, 0, 0, 0.5);
     display: grid;
     box-sizing: border-box;
@@ -474,7 +474,7 @@ div.herowrapper h2 {
     font-family: Lato;
 }
 
-.herodesc {
+.location {
     display: grid;
     position: relative;
     margin-top: 0em;
@@ -487,16 +487,25 @@ div.herowrapper h2 {
     box-sizing: border-box;
 }
 
+.herodesc {
+    display: grid;
+    width: 75vw;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 6em;
+}
+
 .herodesc h2 {
+    text-align: center;
     font-family: HelveticaNowDisplay;
     font-weight: 400;
     grid-column: 1/4;
     font-size: 31.25px;
     width: 66%;
-    margin: 0;
+    max-width: 768px;
+    margin: 0 auto;
 }
 
-.herodesc span {
+.location span {
     display: flex;
     gap: .2em;
     align-self: start;
@@ -515,7 +524,7 @@ div.herowrapper h2 {
     height: 45px;
 }
 
-.herodesc img {
+.location img {
     width: 32px;
     height: 32px;
 }
