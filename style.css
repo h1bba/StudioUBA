@@ -107,7 +107,7 @@ html, body {
 
 body {
     /* background-image: url(/img/bgtexture.png); */
-    background-color: #F8F8F8;
+    background-color: #111111;
     margin: 0;
     overflow-x: hidden;
 }
@@ -126,7 +126,7 @@ a {
 } */
 
 .grid {
-    background-color: #ffffff;
+    background-color: #111111;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     max-width: 1600px;
@@ -138,7 +138,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgba(0, 0, 0, 0.50);
+    border: 1px solid #fefefe;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -152,11 +152,11 @@ a {
 }
 
 .opento {
-    font-family: Lato, sans-serif;
+    font-family: HelveticaNowDisplay, sans-serif;
     font-weight: 500;
     position: relative;
-    color: #ffffff;
-    background-color: #111111;
+    color: #111111;
+    background-color: #fefefe;
     padding: .4em 1em .4em 1em;
     border-radius: 16px;
 }
@@ -178,7 +178,7 @@ a {
 }
 
 .menu {
-    filter: invert(1);
+    /* filter: invert(1); */
 
 
     --s: 32px;
@@ -274,7 +274,8 @@ main {
     margin: 0 auto;
 }
 
-.Logo {
+.logo {
+    filter: invert(1);
     padding-top: 2em;
     padding-bottom: 1.6em;
 }
@@ -492,17 +493,22 @@ div.herowrapper h2 {
     width: 75vw;
     grid-template-columns: repeat(4, 1fr);
     margin-bottom: 6em;
+    margin-top: 6em;
 }
 
 .herodesc h2 {
     text-align: center;
     font-family: HelveticaNowDisplay;
-    font-weight: 400;
-    grid-column: 1/4;
-    font-size: 31.25px;
-    width: 66%;
-    max-width: 768px;
+    font-weight: 300;
+    grid-column: 1/5;
+    font-size: 48.83px;
+    max-width: 960px;
     margin: 0 auto;
+    color: #fefefe;
+}
+
+.bold {
+    font-weight: 600;
 }
 
 .location span {
@@ -1351,6 +1357,25 @@ div.sociallinks {
 .sociallinks a img {
     height: 64px;
     width: 64px;
+}
+
+.bglines {
+    position: fixed;
+    width: 75vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.bglines span {
+    height: 100vh;
+    width: 1px;
+    background-color: #fefefe;
+}
+
+.bglines span:nth-child(1) {
+    grid-column: 1/5;
 }
 
 /* .forminfo>div {
