@@ -150,10 +150,14 @@ a {
 
 .grid div:nth-child(1) {
     border-left: 1px solid #fefefe;
+    border-right: 1px solid #fefefe;
+
 }
 
 .grid div:nth-child(4) {
     border-right: 1px solid #fefefe;
+    border-left: 1px solid #fefefe;
+
 }
 
 
@@ -400,7 +404,7 @@ div.herowrapper h2 {
 .banner span:hover,
 .banner span:hover~span,
 .banner span~span:hover {
-    font-weight: 800;
+    font-weight: 900;
 }
 
 
