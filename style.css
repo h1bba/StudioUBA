@@ -426,7 +426,7 @@ div.herowrapper h2 {
 
 .herobuttons button {
     border-radius: 64px;
-    padding: .5em 1em .5em 1em;
+    padding: .5em 1.2em .5em 1.2em;
     font-size: 25px;
     font-family: HelveticaNowDisplay, sans-serif;
     font-weight: 500;
@@ -437,12 +437,16 @@ div.herowrapper h2 {
     background-color: #ffffff;
     color: #111111;
     border-radius: 64px;
+    border: 1px solid #fefefe;
+
 }
 
 .herobuttons button:nth-child(2) {
     background-color: #111111;
     color: white;
     border-radius: 64px;
+    border: 1px solid #fefefe;
+
 }
 
 .gridhero button:nth-child(1) img {
@@ -460,7 +464,6 @@ div.herowrapper h2 {
     height: auto;
     vertical-align: middle;
     padding-bottom: 2px;
-
 }
 
 .gridhero h1 {
@@ -498,7 +501,7 @@ div.herowrapper h2 {
 .location {
     display: grid;
     position: relative;
-    margin-top: 0em;
+    margin-top: 4em;
     /* margin-bottom: 4em; */
 
     width: 75vw;
@@ -512,8 +515,8 @@ div.herowrapper h2 {
     display: grid;
     width: 75vw;
     grid-template-columns: repeat(4, 1fr);
-    padding-bottom: 10em;
-    margin-top: 6em;
+    padding-bottom: 8em;
+    margin-top: 8em;
     border-bottom: 1px solid #fefefe;
 }
 
@@ -542,14 +545,19 @@ div.herowrapper h2 {
     right: 0;
     font-family: HelveticaNowDisplay;
     font-weight: 400;
-    grid-column: 4/5;
+    grid-column: 2/4;
     font-size: 20px;
     text-align: center;
     background-color: #111111;
-    border: 1px solid #fefefe;
+    border: 1px solid rgba(254, 254, 254, .2);
+
     color: #fefefe;
     justify-content: center;
     height: 45px;
+    box-sizing: border-box;
+    padding-top: 2em;
+    padding-bottom: 2em;
+
 }
 
 .location img {
