@@ -67,11 +67,11 @@ gsap.from(".herodesc h2", {
   scrollTrigger: {
     trigger: ".herodesc",  // Trigger when the herodesc div enters the viewport
     start: "top 90%",      // Start animation when top of herodesc is 80% down the viewport
-    end: "bottom 50%",     // End when the bottom of herodesc is 20% from the top
-    scrub: true,           // Smooth animation with scroll
+    end: "bottom 40%",     // End when the bottom of herodesc is 20% from the top
+    scrub: .5,           // Smooth animation with scroll
     markers: false,         // Add markers (optional, to visualize scroll points)
   },
-  opacity: 0.1,              // Start with opacity 0
+  opacity: 0,              // Start with opacity 0
   y: 100,                   // Start 50px down
   duration: 1,             // Animation duration
   ease: "power2.out"       // Easing function
