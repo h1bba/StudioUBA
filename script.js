@@ -63,16 +63,37 @@ spans.forEach((span, index) => {
 gsap.registerPlugin(ScrollTrigger);
 
 // Target the h2 and create an animation
-gsap.from(".herodesc h2", {
+gsap.from(".herodesc h2, .location", {
   scrollTrigger: {
     trigger: ".herodesc",  // Trigger when the herodesc div enters the viewport
-    start: "top 90%",      // Start animation when top of herodesc is 80% down the viewport
-    end: "bottom 40%",     // End when the bottom of herodesc is 20% from the top
+    start: "top 50%",      // Start animation when top of herodesc is 80% down the viewport
+    end: "bottom 80%",     // End when the bottom of herodesc is 20% from the top
     scrub: .5,           // Smooth animation with scroll
-    markers: false,         // Add markers (optional, to visualize scroll points)
+    markers: true,         // Add markers (optional, to visualize scroll points)
   },
   opacity: 0,              // Start with opacity 0
   y: 100,                   // Start 50px down
   duration: 1,             // Animation duration
   ease: "power2.out"       // Easing function
 });
+
+gsap.fromTo(
+    ".amsterdamvector img", 
+    { 
+      opacity: 0, // Start opacity at 0
+      y: 150      // Start position 100px down
+    }, 
+    {
+      scrollTrigger: {
+        trigger: ".herodesc",  // Trigger when the herodesc div enters the viewport
+        start: "top 30%",      // Start animation when the top of herodesc is 30% down the viewport
+        end: "bottom 80%",     // End when the bottom of herodesc is 80% from the top
+        scrub: 0.5,            // Smooth animation with scroll
+        markers: true,         // Add markers (optional, to visualize scroll points)
+      },
+      opacity: 0.3,            // End opacity at 50%
+      y: 0,                    // Animate back to original position
+      duration: 1,             // Animation duration
+      ease: "power2.out"       // Easing function
+    }
+  );
