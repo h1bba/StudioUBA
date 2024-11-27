@@ -354,6 +354,8 @@ div.herowrapper h2 {
     max-width: 1600px;
     width: 75vw;
     margin: auto;
+    border-radius: 64px;
+    border-top-left-radius: 0em;
 }
 
 .gridhero div {
@@ -383,6 +385,8 @@ div.herowrapper h2 {
     background-color: #fefefe;
     color: #111111;
     box-sizing: border-box;
+
+    border-radius: 0em 64px 64px 0em;
 }
 
 
@@ -530,11 +534,14 @@ div.herowrapper h2 {
     display: grid;
     width: 75vw;
     grid-template-columns: repeat(4, 1fr);
-    padding-bottom: 12em;
+    padding-bottom: 4em;
     padding-top: 8em;
+    margin-top: 8em;
     border: 1px solid #fefefe;
 
     position: relative;
+    border-radius: 64px;
+    border-top-left-radius: 0em;
 }
 
 .herodesc h2 {

@@ -91,7 +91,7 @@ gsap.fromTo(
         scrub: 0.5,            // Smooth animation with scroll
         markers: true,         // Add markers (optional, to visualize scroll points)
       },
-      opacity: 0.3,            // End opacity at 50%
+      opacity: 0.2,            // End opacity at 50%
       y: 0,                    // Animate back to original position
       duration: 1,             // Animation duration
       ease: "power2.out"       // Easing function
