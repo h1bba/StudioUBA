@@ -729,9 +729,9 @@ a.projectwrapper h3 {
 div.bottominfo {
     position: relative;
     bottom: 0;
-    padding: 1em;
+    padding: 2em;
     width: 37.5vw;
-    height: 20%;
+    height: 22%;
     border: 1px solid #fefefe;
     display: flex;
     flex-direction: column;
