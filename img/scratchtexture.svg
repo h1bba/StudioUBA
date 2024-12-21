@@ -1,0 +1,12 @@
+<svg width="573" height="187" viewBox="0 0 573 187" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_488_258" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="574" height="188">
+<line x1="108.295" y1="0.25" x2="0.432997" y2="187.073" stroke="white" stroke-opacity="0.5"/>
+<line x1="224.454" y1="0.25" x2="116.592" y2="187.073" stroke="white" stroke-opacity="0.5"/>
+<line x1="340.615" y1="0.25" x2="232.752" y2="187.073" stroke="white" stroke-opacity="0.5"/>
+<line x1="456.774" y1="0.25" x2="348.911" y2="187.073" stroke="white" stroke-opacity="0.5"/>
+<line x1="572.933" y1="0.25" x2="465.071" y2="187.073" stroke="white" stroke-opacity="0.5"/>
+</mask>
+<g mask="url(#mask0_488_258)">
+<rect x="39" y="1" width="534" height="109" fill="#D9D9D9"/>
+</g>
+</svg>

@@ -81,7 +81,7 @@ gsap.fromTo(
     ".amsterdamvector img", 
     { 
       opacity: 0, // Start opacity at 0
-      y: 150      // Start position 100px down
+      y: 100      // Start position 100px down
     }, 
     {
       scrollTrigger: {
@@ -91,7 +91,7 @@ gsap.fromTo(
         scrub: 0.5,            // Smooth animation with scroll
         markers: true,         // Add markers (optional, to visualize scroll points)
       },
-      opacity: 0.2,            // End opacity at 50%
+      opacity: 0.23,            // End opacity at 50%
       y: 0,                    // Animate back to original position
       duration: 1,             // Animation duration
       ease: "power2.out"       // Easing function
