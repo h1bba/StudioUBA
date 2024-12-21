@@ -631,7 +631,6 @@ div.herowrapper h2 {
     grid-template-columns: repeat(4, 1fr);
     color: white;
     box-sizing: border-box;
-    padding-bottom: 6em;
     margin-bottom: 0;
 }
 
@@ -698,7 +697,7 @@ div.marquee {
 }
 
 .project1 span, .project2 span, .servicewrapper span {
-    color: #111111;
+    color: #fefefe;
 
     font-family: Lato, sans-serif;
     font-weight: 400;
@@ -741,6 +740,10 @@ div.bottominfo {
     margin-top: -1px;
 }
 
+div.bottominfo:last-child {
+    border-bottom: 0px;
+}
+
 .scratch, .scratch2 {
     height: 8em;
     grid-column: 3/5;
@@ -750,7 +753,9 @@ div.bottominfo {
 }
 
 .scratch2 {
-    border-bottom: 1px solid #fefefe;
+    border-top: 1px solid #fefefe;
+
+    border-bottom: 0;
     border-left: 1px solid #fefefe;
     grid-column: 1/3;
 }
@@ -766,7 +771,8 @@ div.bottominfo {
 }
 
 .gificon {
-    background-color: white;
+    /* background-color: white; */
+    filter: invert(1);
     width: 48px;
     position: absolute;
     right: 2em;
@@ -774,7 +780,7 @@ div.bottominfo {
     transition: .5s ease;
     padding: .5em;
     border-radius: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
+    border: 1px solid #111111;
     box-sizing: border-box;
 
 }
@@ -868,6 +874,16 @@ li {
     font-weight: 500;
 }
 
+.width75 {
+    margin: auto;
+    width: 75vw;
+}
+
+.width75 h2 {
+    margin: 0;
+    padding: 1em;
+}
+
 /* .projectpreview {
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.50);
@@ -941,20 +957,20 @@ li {
 
     box-sizing: border-box;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    max-width: 1600px;
+    /* max-width: 1600px; */
     width: 75vw;
     height: max-content;
-    margin: auto;
+    margin: 0 auto;
 
-    flex: none;
-    scroll-snap-align: center;
+    /* flex: none; */
+    /* scroll-snap-align: center; */
     /* Ensure smooth snapping between sections */
 
 }
 
 .service {
-    background-color: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.50);
+    background-color: #111111;
+    border: 1px solid #fefefe;
 
     position: relative;
     box-sizing: border-box;
@@ -978,7 +994,6 @@ li {
     flex-direction: column;
     border-radius: 16px;
     /* border: 1px solid rgba(0, 0, 0, 0.50); */
-    background: #f8f8f8;
     padding: 2em;
     /* min-height: 250px; */
     height: 320px;
@@ -996,7 +1011,7 @@ span.linever {
     position: absolute;
     width: 1px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.50);
+    background-color: #fefefe;
 }
 
 span.linehor {
@@ -1007,11 +1022,12 @@ span.linehor {
     position: absolute;
     width: 100%;
     height: 1px;
-    background-color: rgba(0, 0, 0, 0.50);
+    background-color: #fefefe;
 }
 
 .servicewrapper h3 {
     width: 75%;
+    color: #fefefe;
 }
 
 .servicewrapper p {
@@ -1024,6 +1040,7 @@ span.linehor {
     max-width: 400px;
     width: 80%;
     bottom: 1em;
+    color: #fefefe;
 }
 
 .servicewrapper:nth-child(1), .servicewrapper:nth-child(3) {
@@ -1037,15 +1054,15 @@ span.linehor {
 .sidescroll {
     position: relative;
     box-sizing: border-box;
-    margin: 6em auto;
-    margin-left: -8px;
+    margin: auto;
+    /* margin-left: -8px; */
     overflow-x: scroll;
     scrollbar-width: none;
-    /* For Firefox */
+
     /* Enable horizontal scrolling */
     scroll-snap-type: x mandatory;
     /* Snap scrolling behavior */
-    width: 100vw;
+    /* width: 100vw; */
     /* Full viewport width */
     height: 100%;
     /* Full viewport height */
@@ -1059,13 +1076,13 @@ span.linehor {
 }
 
 .sidescrollsection {
-    display: flex;
+    /* display: flex; */
     /* Flexbox layout for horizontal alignment */
     flex-direction: row;
     /* Make sections align horizontally */
-    width: 200vw;
+    /* width: 200vw; */
     /* Each section will take up full screen width */
-    height: 100%;
+    /* height: 100%; */
     /* Full height for the sections */
     margin: auto;
 }
@@ -1087,28 +1104,37 @@ span.linehor {
 }
 
 section.studiouba {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     width: 75vw;
     max-width: 1600px;
-    margin: 8em auto;
+    margin: auto;
     color: white;
     font-family: HelveticaNowDisplay, sans-serif;
     font-weight: 800;
     box-sizing: border-box;
-    padding-top: 2em;
     padding-bottom: 2em;
 }
 
 section.studiouba div.uba>span {
-    font-size: 8vw;
+    display: flex;
+    flex-basis: 100%;
+    font-size: 61.04px;
     letter-spacing: .02em;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 1.3em;
+    width: 100%;
+    border: 1px solid #fefefe;
+
 }
 
 section.studiouba div.uba {
-    background-color: rgba(0, 0, 0, 0.75);
-    display: inline-block;
-    border: 1px solid rgba(255, 255, 255, 0.50);
+    grid-column: 3/5;
+    /* background-color: rgba(0, 0, 0, 0.75); */
+    /* display: flex; */
+    flex-direction: row;
+    border: 1px solid #fefefe;
 
 }
 
@@ -1120,6 +1146,12 @@ section.studiouba p {
     padding: 32px;
     border: 1px solid rgba(255, 255, 255, 0.50);
 
+}
+
+.circledisplay {
+    grid-column: 1/3;
+    border: 1px solid #fefefe;
+    height: 40em;
 }
 
 span.logotext {
@@ -1138,7 +1170,7 @@ div.mockups {
     border-top: 1px solid rgba(0, 0, 0, 0.50);
 
     background-color: #ffffff;
-    width: 100vw;
+    width: 75vw;
     max-height: 400px;
     box-sizing: border-box;
 
@@ -1166,7 +1198,7 @@ section.form {
     position: relative;
     color: #111111;
     width: 75vw;
-    margin: 8em auto;
+    margin: auto;
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1174,6 +1206,7 @@ section.form {
 }
 
 section.form h3 {
+    color: #fefefe;
     padding-bottom: 1em;
     font-family: HelveticaNowDisplay, sans-serif;
     font-size: 31.06px;
@@ -1186,9 +1219,9 @@ section.form h3 {
 }
 
 .selectservice-form {
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.50);
-    border-radius: 16px;
+    /* background: #ffffff; */
+    /* border: 1px solid #fefefe; */
+    /* border-radius: 16px; */
     padding: 2em;
     grid-column: 1/5;
 
@@ -1198,6 +1231,7 @@ section.form h3 {
 }
 
 .selectservice-form label {
+    color: #fefefe;
     font-family: HelveticaNowDisplay, sans-serif;
     font-weight: 400;
     font-size: 20px;
@@ -1216,12 +1250,13 @@ form.service-form {
     grid-column: 1/5;
     grid-row: 2;
     box-sizing: border-box;
-    background-color: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.50);
+    background-color: #111111;
+    border: 1px solid #fefefe;
 
 }
 
 div.form-group {
+    color: #fefefe;
     display: flex;
     flex-direction: row;
     gap: .5em;
@@ -1296,7 +1331,7 @@ input[type="checkbox"] {
 }
 
 .form .titleproject {
-    grid-column: 2/5;
+    grid-column: 1/5;
 }
 
 form button {
@@ -1318,9 +1353,10 @@ form button {
 
 form button:hover {
     color: white;
-    border: 1px solid rgba(0, 0, 0, 0.5);
+    border: 1px solid #fefefe;
     background-color: #111111;
     transition: .5s ease;
+
 
 }
 
