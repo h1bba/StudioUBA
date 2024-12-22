@@ -113,7 +113,7 @@ body {
     /* background-image: url(/img/bgtexture.png); */
     background-color: #111111;
     margin: 0;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 a {
@@ -342,7 +342,8 @@ div.herowrapper h2 {
 }
 
 .gridhero {
-    position: relative;
+    position: sticky;
+    top: 8em;
 
     box-sizing: border-box;
     /* background-color: #111111; */
@@ -355,6 +356,7 @@ div.herowrapper h2 {
     margin: auto;
     /* border-radius: 64px; */
     border-top-left-radius: 0em;
+    background-color: #111111;
 }
 
 .gridhero div {
@@ -439,7 +441,7 @@ div.herowrapper h2 {
 }
 
 .herobuttons button {
-    border-radius: 64px;
+    /* border-radius: 64px; */
     padding: .5em 1.2em .5em 1.2em;
     font-size: 25px;
     font-family: HelveticaNowDisplay, sans-serif;
@@ -450,7 +452,6 @@ div.herowrapper h2 {
 .herobuttons button:nth-child(1) {
     background-color: #ffffff;
     color: #111111;
-    border-radius: 64px;
     border: 1px solid #fefefe;
 
 }
@@ -458,7 +459,6 @@ div.herowrapper h2 {
 .herobuttons button:nth-child(2) {
     background-color: #111111;
     color: white;
-    border-radius: 64px;
     border: 1px solid #fefefe;
 
 }
@@ -539,6 +539,7 @@ div.herowrapper h2 {
 
     position: relative;
     border-top-left-radius: 0em;
+    background-color: #111111;
 }
 
 .herodesc h2 {
@@ -782,6 +783,7 @@ div.bottominfo:last-child {
     border-radius: 8px;
     border: 1px solid #111111;
     box-sizing: border-box;
+    background-color: white;
 
 }
 
@@ -860,10 +862,11 @@ li {
 }
 
 .titleproject {
+    background-color: #111111;
     grid-column: 1 / 5;
     border: 1px solid #fefefe;
     border-bottom: 1px solid #fefefe;
-    border-top: 0;
+    /* border-top: 0; */
 }
 
 .titleproject h2 {
@@ -871,13 +874,19 @@ li {
     color: white;
     font-size: 61.04px;
     font-family: Lora, sans-serif;
-    font-weight: 500;
+    font-weight: 400;
 }
 
-.width75 {
+.width75, .proceswrapper {
     margin: auto;
     width: 75vw;
+    position: sticky;
+    top: 5px;
+    height: 200vh;
 }
+
+
+
 
 .width75 h2 {
     margin: 0;
@@ -957,15 +966,16 @@ li {
 
     box-sizing: border-box;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    /* max-width: 1600px; */
+    max-width: 1600px;
     width: 75vw;
     height: max-content;
     margin: 0 auto;
 
-    /* flex: none; */
-    /* scroll-snap-align: center; */
-    /* Ensure smooth snapping between sections */
+}
 
+.services .titleproject {
+    background-color: #111111;
+    border-top: 1px solid #fefefe;
 }
 
 .service {
