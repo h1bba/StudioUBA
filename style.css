@@ -307,7 +307,7 @@ main {
 
 .hero {
     width: 75vw;
-    margin: 8em auto 0em auto;
+    margin: 10em auto 0em auto;
     height: auto;
 
     position: sticky;
@@ -441,12 +441,19 @@ div.herowrapper h2 {
 }
 
 .herobuttons button {
-    /* border-radius: 64px; */
+    border-radius: 64px;
     padding: .5em 1.2em .5em 1.2em;
     font-size: 25px;
     font-family: HelveticaNowDisplay, sans-serif;
     font-weight: 500;
+    transition: .3s ease-out;
 
+}
+
+.herobuttons button:hover {
+    transform: scale(1.1);
+    transition: .3s ease-out;
+    filter: invert(1);
 }
 
 .herobuttons button:nth-child(1) {
@@ -460,7 +467,10 @@ div.herowrapper h2 {
     background-color: #111111;
     color: white;
     border: 1px solid #fefefe;
+}
 
+.herobuttons button:nth-child(1):hover {
+    border: 1px solid #111111;
 }
 
 .gridhero button:nth-child(1) img {
@@ -595,7 +605,7 @@ div.herowrapper h2 {
 .amsterdamvector {
     overflow: hidden;
     position: absolute;
-    bottom: -5px;
+    bottom: -15px;
     text-align: center;
     z-index: 0;
     margin-inline: auto;
@@ -687,6 +697,23 @@ div.marquee {
 
 .project1 {
     border-top: 0;
+}
+
+.project1 a.projectwrapper {
+    border-right: 1px solid #fefefe;
+    border-bottom: 1px solid #fefefe;
+    z-index: 2;
+    background-size: cover;
+    background-position: center;
+    background-image: url(/img/EurekaMockup1.png);
+}
+
+.project2 a.projectwrapper {
+    border-right: 1px solid #fefefe;
+
+    background-size: cover;
+    background-position: center;
+    background-image: url(/img/VanleeuwenMockup.png);
 }
 
 .project2 {
@@ -846,6 +873,7 @@ div.procesbtn img {
 
 ul {
     margin-bottom: 0px;
+    margin-top: 8px;
     padding-left: 0;
     list-style: none;
     list-style-type: none;
@@ -878,6 +906,7 @@ li {
 }
 
 .width75, .proceswrapper {
+
     margin: auto;
     width: 75vw;
     position: sticky;
@@ -1176,12 +1205,13 @@ div.logotitle {
 }
 
 div.mockups {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.50);
-    border-top: 1px solid rgba(0, 0, 0, 0.50);
+    border-left: 1px solid #fefefe;
+    border-right: 1px solid #fefefe;
+    border-top: 1px solid #fefefe;
 
     background-color: #ffffff;
     width: 75vw;
-    max-height: 400px;
+    max-height: 360px;
     box-sizing: border-box;
 
     position: relative;
@@ -1197,10 +1227,8 @@ div.mockup-track {
 }
 
 div.mockups img {
-    width: 400px;
+    width: 360px;
     max-width: 50%;
-    padding: 2em;
-    border-radius: 48px;
 }
 
 section.form {
@@ -1487,4 +1515,39 @@ span.wereld {
     grid-row: 1;
 
     grid-column: 5/5;
+}
+
+.pie-chart {
+    width: 100%;
+    /* Or a specific size */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+
+.pie-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 10em auto;
+}
+
+.pie-chart {
+    transform: scale(1);
+    /* Optional scaling */
+}
+
+/* .pie-chart>path:nth-child(1) {
+    transform: translateY(140px);
+} */
+
+.pie-chart>path:nth-child(2) {
+    transform: translateX(145px);
+
+}
+
+.pie-chart>path:nth-child(3) {
+    /* transform: translateX(5px); */
+    transform: translate(20px, 145px);
+
 }

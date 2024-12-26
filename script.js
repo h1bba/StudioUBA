@@ -69,7 +69,7 @@ gsap.from(".herodesc h2, .location", {
     start: "top 50%",      // Start animation when top of herodesc is 80% down the viewport
     end: "bottom 80%",     // End when the bottom of herodesc is 20% from the top
     scrub: .5,           // Smooth animation with scroll
-    markers: true,         // Add markers (optional, to visualize scroll points)
+    markers: false,         // Add markers (optional, to visualize scroll points)
   },
   opacity: 0,              // Start with opacity 0
   y: 100,                   // Start 50px down
@@ -89,7 +89,7 @@ gsap.fromTo(
       start: "top 30%",      // Start animation when the top of herodesc is 30% down the viewport
       end: "bottom 80%",     // End when the bottom of herodesc is 80% from the top
       scrub: 0.5,            // Smooth animation with scroll
-      markers: true,         // Add markers (optional, to visualize scroll points)
+      markers: false,         // Add markers (optional, to visualize scroll points)
     },
     opacity: 0.23,            // End opacity at 50%
     y: 0,                    // Animate back to original position
@@ -98,9 +98,9 @@ gsap.fromTo(
   }
 );
 
-// Fade-in animation for the .width75 section
+// Fade-in animation for the child elements of .width75
 const width75ServiceWrappers = document.querySelectorAll('.width75 .servicewrapper');
-const width75Timeline = gsap.timeline({
+gsap.timeline({
   scrollTrigger: {
     trigger: '.width75', // Trigger for the .width75 section
     start: "top 200vh", // Start animations after scrolling past 200vh
@@ -108,15 +108,31 @@ const width75Timeline = gsap.timeline({
     scrub: true, // Tie animation progress to scroll
     markers: false, // Enable markers for debugging if needed
   },
-});
-width75Timeline.from(width75ServiceWrappers, {
-  opacity: 0,
-  y: 50,
-  duration: 1,
-  stagger: 0.3,
+}).from(width75ServiceWrappers, {
+  opacity: 0,  // Start fully transparent
+  y: 50,       // Start slightly below their final position
+  duration: 1, // Duration for each animation
+  stagger: 0.3 // Animate each child with a delay between them
 });
 
-// Animation for fading out and scaling down .width75
+// Fade-in animation for the child elements of .proceswrapper
+const procesServiceWrappers = document.querySelectorAll('.proceswrapper .servicewrapper');
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '.proceswrapper', // Trigger for the .proceswrapper section
+    start: "top 200vh", // Start animations after scrolling past 200vh
+    end: "bottom-=1024 top", // End animations 200px before the bottom of the section
+    scrub: true, // Tie animation progress to scroll
+    markers: false, // Enable markers for debugging if needed
+  },
+}).from(procesServiceWrappers, {
+  opacity: 0,  // Start fully transparent
+  y: 50,       // Start slightly below their final position
+  duration: 1, // Duration for each animation
+  stagger: 0.3 // Animate each child with a delay between them
+});
+
+// Exit animation for .width75 (fade-out and scale down the whole container)
 gsap.to('.width75', {
   opacity: 0, // Fade out
   scale: 0.9, // Scale down slightly
@@ -130,25 +146,7 @@ gsap.to('.width75', {
   },
 });
 
-// Fade-in animation for the .proceswrapper section
-const procesServiceWrappers = document.querySelectorAll('.proceswrapper .servicewrapper');
-const procesTimeline = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.proceswrapper', // Trigger for the .proceswrapper section
-    start: "top 200vh", // Start animations after scrolling past 200vh
-    end: "bottom-=1024 top", // End animations 200px before the bottom of the section
-    scrub: true, // Tie animation progress to scroll
-    markers: false, // Enable markers for debugging if needed
-  },
-});
-procesTimeline.from(procesServiceWrappers, {
-  opacity: 0,
-  y: 50,
-  duration: 1,
-  stagger: 0.3,
-});
-
-// Exit animation for the .proceswrapper section (fade-out and scale down)
+// Exit animation for .proceswrapper (fade-out and scale down the whole container)
 gsap.to('.proceswrapper', {
   opacity: 0, // Fade out
   scale: 0.9, // Scale down slightly
@@ -156,7 +154,7 @@ gsap.to('.proceswrapper', {
   scrollTrigger: {
     trigger: '.proceswrapper', // Trigger when .proceswrapper is leaving the viewport
     start: "bottom bottom", // Start when the bottom of .proceswrapper leaves the viewport
-    end: "bottom+=100 top", // End when it's out of the viewport (adjust as needed)
+    end: "bottom+=100 top", // End when it's out of the viewport
     scrub: true, // Smooth transition tied to scroll
     markers: false, // Enable markers for debugging if needed
   },
