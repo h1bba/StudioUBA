@@ -159,3 +159,75 @@ gsap.to('.proceswrapper', {
     markers: false, // Enable markers for debugging if needed
   },
 });
+
+// Text animation
+gsap.fromTo(
+  ".uba > span", // Target spans inside .uba
+  { x: "100%" }, // Start off-screen to the right
+  {
+    x: "0%", // Animate into position
+    duration: 1,
+    stagger: 0.3, // Staggered animation for the text
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".uba", // Trigger when .uba enters the viewport
+      start: "top 65%",
+      end: "bottom 75%",
+      scrub: true,
+    },
+  }
+);
+
+// Pie chart animation for the first slice
+gsap.fromTo(
+  ".pie-chart > path:nth-child(1)",
+  { x: -50, y: -50 }, // Match initial translate(-50px, -50px)
+  {
+    x: 0,
+    y: 0,
+    duration: 1.5,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".uba", // Same trigger as text animation
+      start: "top 65%",
+      end: "bottom 65%",
+      scrub: true,
+    },
+  }
+);
+
+// Pie chart animation for the second slice
+gsap.fromTo(
+  ".pie-chart > path:nth-child(2)",
+  { x: 195, y: -50 }, // Match initial translate(-50px, -50px)
+  {
+    x: 145,
+    y: 0,
+    duration: 1.5,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".uba", // Same trigger as text animation
+      start: "top 65%",
+      end: "bottom 60%",
+      scrub: true,
+    },
+  }
+);
+
+// Pie chart animation for the third slice
+gsap.fromTo(
+  ".pie-chart > path:nth-child(3)",
+  { x: 20, y: 195 }, // Match initial translate(-50px, -50px)
+  {
+    x: 20,
+    y: 145,
+    duration: 1.5,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".uba", // Same trigger as text animation
+      start: "top 65%",
+      end: "bottom 55%",
+      scrub: true,
+    },
+  }
+);

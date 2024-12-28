@@ -314,32 +314,6 @@ main {
     top: 0;
 }
 
-div.herowrapper {
-    background-color: #111111;
-    border: rgba(0, 0, 0, 0.5);
-    width: 25%;
-    margin: 8em 0em 0em 0em;
-    border: 1px solid #fefefe;
-    border-bottom: none;
-    display: grid;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-div.herowrapper h2 {
-    box-sizing: border-box;
-    margin: .5em;
-    height: 100%;
-    padding-top: .5em;
-    background-color: #fefefe;
-    color: #111111;
-    font-family: HelveticaNowDisplay, sans-serif;
-    font-weight: 500;
-    text-align: center;
-    grid-column: 1/2;
-    border-radius: 16px;
-
-}
 
 .gridhero {
     position: sticky;
@@ -788,16 +762,6 @@ div.bottominfo:last-child {
     grid-column: 1/3;
 }
 
-.dividerwrap {
-    grid-column: 1/5;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.25);
-    height: 1px;
-    margin-top: 2em;
-    margin-bottom: 2em;
-
-}
-
 .gificon {
     /* background-color: white; */
     filter: invert(1);
@@ -822,54 +786,6 @@ div.bottominfo:last-child {
     width: 64px;
     transition: .3s ease;
 }
-
-div.procesbtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-row: 1;
-    grid-column: 4/5;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.50);
-}
-
-div.procesbtn a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    color: white;
-    font-family: HelveticaNowDisplay, sans-serif;
-    font-weight: 300;
-    font-size: 1.5rem;
-}
-
-div.procesbtn a:hover {
-    transition: .5s;
-
-    background: linear-gradient(to top, #cbd3cb 0%, #c9c9c9 100%);
-    color: black;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-div.procesbtn a:hover img {
-    transition: .5s;
-    filter: invert(1);
-}
-
-
-div.procesbtn img {
-    vertical-align: top;
-    height: 32px;
-    width: auto;
-}
-
-.rotated {
-    rotate: 180deg;
-}
-
-
 
 ul {
     margin-bottom: 0px;
@@ -955,31 +871,6 @@ li {
     /* background-color: #F8F8F8; */
     /* backdrop-filter: blur(16px); */
 
-}
-
-.categorywrapper {
-    overflow: hidden;
-    grid-row: 1;
-    background-color: #ffffff;
-    border: rgba(0, 0, 0, 0.5);
-    margin: 0em;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    display: grid;
-    box-sizing: border-box;
-}
-
-.categorywrapper h2 {
-    box-sizing: border-box;
-    margin: .5em;
-    height: 100%;
-    padding-top: .5em;
-    background-color: #111111;
-    color: white;
-    font-family: HelveticaNowDisplay, sans-serif;
-    font-weight: 500;
-    text-align: center;
-    grid-column: 1/2;
-    border-radius: 16px;
 }
 
 .plusbutton {
@@ -1126,24 +1017,8 @@ span.linehor {
     margin: auto;
 }
 
-.sidearrow {
-    position: absolute;
-    top: 50%;
-    right: 1%;
-    width: 128px;
-    rotate: 90deg;
-    opacity: 40%;
-    transition: 1s ease;
-}
-
-.sidearrow:hover {
-    opacity: 80%;
-    transition: .5s ease;
-    cursor: pointer;
-}
-
 section.studiouba {
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     width: 75vw;
     max-width: 1600px;
@@ -1152,28 +1027,33 @@ section.studiouba {
     font-family: HelveticaNowDisplay, sans-serif;
     font-weight: 800;
     box-sizing: border-box;
-    padding-bottom: 2em;
+    padding-bottom: 20em;
 }
 
 section.studiouba div.uba>span {
-    display: flex;
-    flex-basis: 100%;
-    font-size: 61.04px;
+    font-size: 76.3px;
     letter-spacing: .02em;
     padding-left: 16px;
     padding-right: 16px;
     height: 1.3em;
     width: 100%;
-    border: 1px solid #fefefe;
-
+    /* border: 1px solid #fefefe; */
+    border-left: 0;
+    transform: translateX(100%);
+    /* Start off-screen to the right */
 }
 
 section.studiouba div.uba {
-    grid-column: 3/5;
-    /* background-color: rgba(0, 0, 0, 0.75); */
-    /* display: flex; */
-    flex-direction: row;
+    height: 40em;
     border: 1px solid #fefefe;
+    border-left: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    /* Prevent text from being visible outside */
+    padding-top: 11em;
+    padding-left: 1em;
 
 }
 
@@ -1188,8 +1068,12 @@ section.studiouba p {
 }
 
 .circledisplay {
-    grid-column: 1/3;
+    display: flex;
+    width: 50%;
+    /* display: grid;
+    grid-column: 1/5; */
     border: 1px solid #fefefe;
+    border-right: 0;
     height: 40em;
 }
 
@@ -1303,11 +1187,6 @@ div.form-group {
     padding-bottom: 1em;
 }
 
-section.form .categorywrapper {
-    grid-column: 1/2;
-    grid-row: 1;
-}
-
 .forminfo {
     border-radius: 16px;
     grid-column: 1/5;
@@ -1417,57 +1296,6 @@ form button:hover img {
     mix-blend-mode: screen;
 }
 
-
-
-section.form .procesbtn {
-    grid-row: 1;
-}
-
-.socials {
-    box-sizing: border-box;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.50);
-    color: white;
-    width: 75vw;
-    margin: 8em auto;
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-column: 1/5;
-}
-
-.socials .titleproject {
-    grid-column: 2/5;
-}
-
-span.wereld {
-    display: block;
-    height: 48px;
-    width: 48px;
-    background-size: contain;
-    background-image: url(/img/globe.svg);
-}
-
-.cta-bottom {
-    width: 100%;
-    grid-column: 1/5;
-    font-size: 39.06px;
-    font-weight: 500;
-    font-family: HelveticaNowDisplay, sans-serif;
-}
-
-.cta-bottom h3 {
-    gap: .4em;
-    font-weight: 300;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    display: flex;
-    width: 100%;
-    padding: 2em 0 2em 0;
-}
-
 .bglines {
     position: fixed;
     top: 0;
@@ -1518,7 +1346,8 @@ span.wereld {
 }
 
 .pie-chart {
-    width: 100%;
+    overflow: visible;
+    width: 300px;
     /* Or a specific size */
     height: auto;
     /* Maintain aspect ratio */
@@ -1526,28 +1355,25 @@ span.wereld {
 
 
 .pie-container {
+    display: flex;
     position: relative;
     width: 300px;
     height: 300px;
     margin: 10em auto;
+    margin-left: 24em;
 }
 
-.pie-chart {
-    transform: scale(1);
-    /* Optional scaling */
+.pie-chart>path:nth-child(1) {
+    transform: translate(-50px, -50px);
+    /* No initial translation */
 }
-
-/* .pie-chart>path:nth-child(1) {
-    transform: translateY(140px);
-} */
 
 .pie-chart>path:nth-child(2) {
-    transform: translateX(145px);
-
+    transform: translate(145px, 0px);
+    /* Initial right displacement */
 }
 
 .pie-chart>path:nth-child(3) {
-    /* transform: translateX(5px); */
     transform: translate(20px, 145px);
-
+    /* Initial diagonal displacement */
 }
